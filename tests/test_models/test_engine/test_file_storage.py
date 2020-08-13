@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """ Module for testing file storage"""
 import unittest
+import os
+import pep8
 from models.base_model import BaseModel
 from models import storage
-import os
+from models.engine.file_storage import FileStorage
 
 
 class test_fileStorage(unittest.TestCase):
@@ -17,11 +19,17 @@ class test_fileStorage(unittest.TestCase):
         for key in del_list:
             del storage._FileStorage__objects[key]
 
+    def test_pep8_FileStorage(self):
+        """Tests pep8 style"""
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(p.total_errors, 0, "fix pep8")
+
     def tearDown(self):
         """ Remove storage file at end of tests """
         try:
             os.remove('file.json')
-        except:
+        except Exception:
             pass
 
     def test_obj_list_empty(self):
@@ -37,9 +45,11 @@ class test_fileStorage(unittest.TestCase):
 
     def test_all(self):
         """ __objects is properly returned """
-        new = BaseModel()
-        temp = storage.all()
-        self.assertIsInstance(temp, dict)
+        storage = FileStorage()
+        obj = storage.all()
+        self.assertIsNotNone(obj)
+        self.assertEqual(type(obj), dict)
+        self.assertIs(obj, storage._FileStorage__objects)
 
     def test_base_model_instantiation(self):
         """ File is not created on BaseModel save """
