@@ -8,7 +8,7 @@
 
 
 [![lisence](https://img.shields.io/github/license/adonis7ejeda/AirBnB_clone_v2?style=plastic)](https://github.com/adonis7ejeda/AirBnB_clone_v2/blob/master/LICENSE)
-[![Twitter Adonis](https://img.shields.io/twitter/follow/cbarros27?label=CarlosBarros&style=social)](https://twitter.com/Adonis7ejeda)
+[![Twitter Adonis](https://img.shields.io/twitter/follow/Adonis7ejeda?label=AdonisTejeda&style=social)](https://twitter.com/Adonis7ejeda)
 [![Twitter Carlos](https://img.shields.io/twitter/follow/cbarros27?label=CarlosBarros&style=social)](https://twitter.com/cbarros27)
 
 
@@ -20,6 +20,8 @@ In this project we learned how to build a database engine with the SQLAlchemy Py
   <img src="https://github.com/adonis7ejeda/AirBnB_clone_v2/blob/master/assets/hbnb_step2.png"
 	    alt="HolbertonBnB logo">
 </p>
+
+
 ### Classes :cl:
 
 HolbertonBnB supports the following classes:
