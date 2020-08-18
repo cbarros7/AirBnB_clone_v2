@@ -24,9 +24,8 @@ def do_deploy(archive_path):
         run('rm -f /tmp/{}.tgz'.format(name))
         run('mv {}/web_static/* {}/'.format(dest, dest))
         run('rm -rf {}/web_static'.format(dest))
-        run('rm -rf /data/web_static/current'.format(name))
+        run('rm -rf /data/web_static/current')
         run('ln -s {} /data/web_static/current'.format(dest))
         return True
     except:
         return False
-
