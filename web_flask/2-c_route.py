@@ -13,8 +13,8 @@ def hbnb():
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def display_text(msg):
-    return "C " + msg.replace('_', ' ')
+def display_text(text):
+    return "C " + text.replace('_', ' ')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
