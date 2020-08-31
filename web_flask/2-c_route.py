@@ -1,19 +1,20 @@
 from flask import Flask
 app = Flask(__name__)
+app.strict_slashes = False
 
 
-@app.route("/", strict_slashes=False)
+@app.route("/")
 def route():
     return "Hello HBNB!"
 
 
-@app.route("/hbnb", strict_slashes=False)
+@app.route("/hbnb")
 def hbnb():
     return "HBNB"
 
 
-@app.route("/c/<text>", strict_slashes=False)
-def display_text(text):
+@app.route("/c/<text>")
+def display_text_c(text):
     return "C " + text.replace('_', ' ')
 
 if __name__ == '__main__':
