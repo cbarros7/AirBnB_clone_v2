@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Script that starts a Flask web application
-3- Python is cool
+Is it a number?
 """
 from flask import Flask
 app = Flask(__name__)
@@ -47,6 +47,14 @@ def python_is_cool():
     """
     text = "is cool"
     return "Python {}".format(text)
+
+
+@app.route('/number/<int:n>')
+def is_it_a_number(n):
+    """
+    Return a string only if valid int
+    """
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':

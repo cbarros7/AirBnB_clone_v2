@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 Script that starts a Flask web application
-3- Python is cool
+5- Number template
 """
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 app.strict_slashes = False
 
@@ -47,6 +47,22 @@ def python_is_cool():
     """
     text = "is cool"
     return "Python {}".format(text)
+
+
+@app.route('/number/<int:n>')
+def is_it_a_number(n):
+    """
+    Return a string only if valid int
+    """
+    return "{} is a number".format(n)
+
+
+@app.route('/number_template/<int:n>')
+def number_template(n):
+    """
+    Displays an html page only if number is int
+    """
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
