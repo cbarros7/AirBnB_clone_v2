@@ -21,14 +21,22 @@ def close_db(self):
     storage.close()
 
 
-@app.route('/cities_by_states')
+@app.route('/states_list')
 def list_of_states():
     """
     Displays all states present in DBStorage
     """
+    return render_template('7-states_list.html',
+                           state=storage.all(State).values())
+
+
+@app.route('/cities_by_states')
+def cities_by_states():
+    """
+    Displays all cities in a state present in DBStorage
+    """
     return render_template('8-cities_by_states.html',
-                           state=storage.all(State).values(),
-                           city=storage.all(City).values())
+                           state=storage.all(State).values())
 
 
 if __name__ == "__main__":
